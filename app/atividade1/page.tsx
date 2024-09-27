@@ -1,12 +1,14 @@
 "use client"
 import { useState } from "react"
 
+import {useRouter} from "next/navigation"
 
+import Input from "../componentes/input"
 
 export default function Rota() {
     const [error, setError] = useState("")
     const [usuarios, setUsuarios] = useState([{email: "rioskenakamura@gmail.com", password: "123456"}])
-  
+   const router =useRouter()
 
     const Verifica = () => {
         const email = (document.getElementById("email") as HTMLInputElement).value
@@ -22,7 +24,8 @@ export default function Rota() {
 
         if (usuarioValido) {
             setError("Usuario valido")
-            window.location.href = "/" //não funciona o Router no use Client
+            router.push("/")
+            //window.location.href = "/" //não funciona o Router no use Client
         } else {
             setError("Usuário ou senha inválidos")
         }
@@ -32,10 +35,9 @@ export default function Rota() {
         <div>
             <h1>Rota</h1>
             <div>
-                <h2>Email</h2>
-                <input type="text" placeholder="email" name="email" id="email" />
-                <h2>Senha</h2>
-                <input type="password" placeholder="password" name="password" id="password" />
+                 <Input name="email" tipo="text" id="email" />
+                <Input name="senha" tipo="password" id="password" />
+                
 
                 <button type="submit" onClick={Verifica}>Login</button>
             </div>

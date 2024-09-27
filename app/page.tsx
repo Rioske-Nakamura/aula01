@@ -1,6 +1,7 @@
 "use client"
 import Image from "next/image";
 import { useState } from "react";
+import Button from "./componentes/butto";
 
 export default function Home() {
   const [user, setUser] = useState(false)
@@ -10,6 +11,7 @@ export default function Home() {
         <a href="/rota">my route</a>
         <h1>hello</h1>
         <button onClick={() => setUser(false)}>Logout</button>
+        <Button name="Informatica 6" />
       </div>
     )
   }
