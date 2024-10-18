@@ -1,0 +1,10 @@
+{
+  "usuarios": [
+    {
+      "email": "rioskenakamura@gmail.com",
+      "password": "123456",
+      "nome": "Rioske Nakamura",
+      "nascimento": "2006-02-02"
+    }
+  ]
+}

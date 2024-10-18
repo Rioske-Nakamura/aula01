@@ -1,13 +1,16 @@
-import React from "react"
-
+import React from "react";
 
 type Buttonprops = {
-    name: string
+  name: string;
+  onClick: () => void;
+};
 
-}
+const Button: React.FC<Buttonprops> = ({ name, onClick }) => {
+  return (
+    <button type="button" onClick={onClick}>
+      {name}
+    </button>
+  );
+};
 
-const Button: React.FC<Buttonprops> =( { name }) => {
-    return <div><h1>{name}</h1></div>
-}
-
-export default Button
+export default Button;
