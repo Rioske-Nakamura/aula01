@@ -2,7 +2,7 @@
 import { useState } from "react";
 import { useRouter } from "next/navigation";
 import Input from "../componentes/input";
-import Button from "../componentes/butto"; // Corrigido o nome do arquivo
+import Button from "../componentes/button"; // Corrigido o nome do arquivo
 import Usuario from "../interfaces/usuario";
 
 export default function Cadastro() {
