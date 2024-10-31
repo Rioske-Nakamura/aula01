@@ -35,6 +35,7 @@ export default function Rota() {
     fetch("/usuarios.json")
       .then((response) => response.json())
       .then((data) => setUsuarios(data.usuarios))
+      
       .catch((error) => console.error("Erro ao carregar os usuários:", error));
   }, []);
 
