@@ -1,0 +1,18 @@
+[
+    {
+        "id": 1,
+        "nome": "Rioske Nakamura",
+        "email": "rioskenakamura@gmail.com",
+        "password": "123456",
+        "nascimento": "2006-02-02",
+        "tipo": "admin"
+    },
+    {
+        "id": 2,
+        "nome": "Maryah",
+        "email": "maryah@gmail.com",
+        "password": "123456",
+        "nascimento": "2006-02-02",
+        "tipo": "ajudante"
+    }
+]

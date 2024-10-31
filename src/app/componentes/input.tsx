@@ -1,4 +1,5 @@
 import React from "react"
+import Styles from "../page.module.css"
 
 type Inputprops = {
     name: string
@@ -10,7 +11,7 @@ const Input: React.FC<Inputprops> =({  name,  tipo,  id }) => {
     return (
         <div>
             <h2>{name}</h2>
-            <input type={tipo} name={name} id={id} placeholder={"digite o(a) "+ name}/></div>
+            <input className={Styles.input} type={tipo} name={name} id={id} placeholder={"digite o(a) "+ name}/></div>
     )
 }
 
