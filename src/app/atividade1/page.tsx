@@ -81,7 +81,9 @@ export default function Rota() {
 
       <p id="error">{error}</p>
 
-      <a href="/">Home</a>
+      <a href="/">
+      Home
+      </a>
     </div>
   );
 }
