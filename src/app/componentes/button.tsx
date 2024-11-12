@@ -7,7 +7,7 @@ type Buttonprops = {
 
 const Button: React.FC<Buttonprops> = ({ name, onClick }) => {
   return (
-    <button type="button" onClick={onClick}>
+    <button type="submit" onClick={onClick}>
       {name}
     </button>
   );

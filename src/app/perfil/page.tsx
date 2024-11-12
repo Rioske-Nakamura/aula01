@@ -22,4 +22,4 @@ const PaginaPerfil = () => {
 
 export default PaginaPerfil
 
-export default Usuario
+//export default Usuario
