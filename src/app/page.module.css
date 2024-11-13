@@ -8,3 +8,41 @@
     border-radius: 5px;
     font-size: 16px;
 }
+
+/*navbar*/
+.navbar {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 10px 20px;
+    background-color: white;
+    border: 1px solid #000;
+    font-family: "Century Gothic";
+}
+
+.links {
+    display: flex;
+    list-style: none;
+    gap: 20px;
+}
+
+.links a {
+    text-decoration: none;
+    color: black;
+    font-size: 14px;
+}
+
+.links a:hover {
+    color: gray;
+}
+
+/* Estilos dos ícones sociais */
+.icons a {
+    color: black;
+    font-size: 18px;
+    margin-left: 15px;
+}
+
+.icons a:hover {
+    color: gray;
+}
