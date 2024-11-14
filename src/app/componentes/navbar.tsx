@@ -1,52 +1,63 @@
-import React from "react"
-import Styles from "../page.module.css"
-import { useState, useEffect } from "react";
-import { useRouter } from "next/navigation";
-import Link from "next/link";
+import Link from "@/node_modules/next/link";
+import { useRouter } from "@/node_modules/next/navigation";
+import React, { useState, useEffect } from "react";
+import Styles from "../page.module.css";
+import { parseCookies, destroyCookie } from "@/node_modules/nookies";
 
 const Navbar = () => {
-    const [user, setUser] = useState(false);
+  const [user, setUser] = useState(false);
   const router = useRouter();
 
   useEffect(() => {
-    const email = localStorage.getItem("email");
-    const password = localStorage.getItem("password");
-
-    if (email && password) {
-      setUser(true);
-    }
-   
+    const cookies = parseCookies();
+    setUser(!!cookies['restaurant-token']);
   }, []);
+
   const handleLogout = () => {
-    localStorage.removeItem("email");
-    localStorage.removeItem("password");
+    destroyCookie(undefined, 'restaurant-token');
     setUser(false);
-    router.push("/atividade1");
+    router.push("/login");
   };
 
-    return (
-        <nav className={Styles.navbar}>
-      <ul className={Styles.links}>
-                <li><a href="#">HOME</a></li>
-                <li><a href="#">MENUS</a></li>
-                <li><a href="#">RESERVAS</a></li>
-                <li><a href="#">CONTATOS</a></li>
-                {user ? (
-                <li><a className={Styles.links} onClick={handleLogout} >LOGOUT</a></li>           
-            ) : (
-                <li><a className={Styles.links} onClick={handleLogout} >LOGIN</a></li>
-            )}
-                </ul>
+  const handleLogin = () => {
+    router.push("/login");
+  };
 
-            <div className={Styles.icons}>
-                <a href="#"></a>
-                <a href="#"></a>
-                <a href="#"></a>
-            </div>
-      <div>
+  return (
+    <nav className={Styles.navbar}>
+      <ul className={Styles.links}>
+        <li><Link href="/" legacyBehavior><a>HOME</a></Link></li>
+        <li><Link href="/menus" legacyBehavior><a>MENUS</a></Link></li>
+        <li><Link href="/reservas" legacyBehavior><a>RESERVAS</a></Link></li>
+        <li><Link href="/contatos" legacyBehavior><a>CONTATOS</a></Link></li>
+        {user ? (
+          <li>
+            <a className={Styles.links} onClick={handleLogout} style={{ cursor: "pointer" }}>
+              LOGOUT
+            </a>
+          </li>
+        ) : (
+          <li>
+            <a className={Styles.links} onClick={handleLogin} style={{ cursor: "pointer" }}>
+              LOGIN
+            </a>
+          </li>
+        )}
+      </ul>
+
+      <div className={Styles.icons}>
+        <a href="https://www.facebook.com" target="_blank" rel="noopener noreferrer">
+          <img src="https://static.wixstatic.com/media/0fdef751204647a3bbd7eaa2827ed4f9.png" width="30" height="30" alt="Facebook Icon" />
+        </a>
+        <a href="https://www.twitter.com" target="_blank" rel="noopener noreferrer">
+          <img src="https://static.wixstatic.com/media/c7d035ba85f6486680c2facedecdcf4d.png" width="30" height="30" alt="Twitter Icon" />
+        </a>
+        <a href="https://www.instagram.com" target="_blank" rel="noopener noreferrer">
+          <img src="https://static.wixstatic.com/media/01c3aff52f2a4dffa526d7a9843d46ea.png" width="30" height="30" alt="Instagram Icon" />
+        </a>
       </div>
     </nav>
-    )
+  );
 };
 
-export default Navbar
+export default Navbar;
