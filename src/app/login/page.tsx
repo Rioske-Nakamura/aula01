@@ -1,9 +1,11 @@
 "use client";
 import { useState, FormEvent, useEffect } from "react";
-import { useRouter } from "next/navigation";
+
 import { ApiURL } from "../config";
 import styles from './page.module.css';
-import { setCookie } from "nookies";
+
+import { useRouter } from "@/node_modules/next/navigation";
+import { setCookie } from "@/node_modules/nookies/dist/index";
 interface ResponseSignin {
   erro: boolean,
   mensagem: string,
@@ -11,9 +13,9 @@ interface ResponseSignin {
 }
 
 export default function Login() {
-  const [email, setEmail] = useState<string>();
-  const [password, setPassword] = useState<string>();
-  const [error, setError] = useState<string>();
+  const [email, setEmail] = useState<string>('');
+  const [password, setPassword] = useState<string>('');
+  const [error, setError] = useState<string>('');
   const router = useRouter();
 
   const Verifica = async (e: FormEvent) => {
@@ -26,6 +28,7 @@ export default function Login() {
         },
         body: JSON.stringify({ email, password })
       })
+      console.log(response)
       if (response) {
         const data: ResponseSignin = await response.json()
         const { erro, mensagem, token = '' } = data;
@@ -38,6 +41,8 @@ export default function Login() {
             maxAge: 60 * 60 * 1 // 1 hora
           })
 
+          router.push('/')
+
         }
       } else {
 
@@ -49,15 +54,21 @@ export default function Login() {
     };
   }
   return (
-    <div>
-      <h1>Rota</h1>
-      <form onSubmit={Verifica}>
-        <input type="text" className={styles.input} value={email} onChange={(e) => setEmail(e.target.value)} placeholder="email" />
+    <div className={styles.center}>
+    <div  className={styles.loginContainer}>
+       <img src="https://static.wixstatic.com/media/9fbf96_0fbf26014a794c87b00f0ad557394ad1~mv2.png/v1/fill/w_382,h_382,al_c,q_85,usm_0.66_1.00_0.01,enc_auto/logo-red-bamboo-17-0120.png" alt="WordPress Logo" className={styles.logo} ></img>
+      <form onSubmit={Verifica} className={styles.form}>
+      <label>Digite seu endereço de e-mail</label>
+        <input type="text" className={styles.input} value={email} onChange={(e)=> setEmail(e.target.value)} placeholder="email" />
+        <label>Digite sua senha</label>
         <input type="password" className={styles.input} value={password} onChange={(e) => setPassword(e.target.value)} placeholder="senha" />
-        <button type="submit">aaaaaaaaaaaaaaaaa</button>
+        <button className={styles.Button2} type="submit">Verifica</button>
       </form>
-      <p id="error">{error}</p>
-      <a href="/">Home</a>
+      <p id="error" style={{ color: "red" }} >{error}</p>
+      <a className={styles.link}href="/cadastro" >não possui cadastro? Cadastrar</a>
+
+      <a className={styles.link} href="/">Home</a>
+    </div>
     </div>
   );
 }
