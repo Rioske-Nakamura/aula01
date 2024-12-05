@@ -1,11 +1,13 @@
 "use client";
-import { FormEvent, useState } from "react";
-import Input from "../componentes/input";
-import Button from "../componentes/button";
+import { FormEvent, useState, useEffect } from "react";
 import Usuario from "../interfaces/usuario";
 import { ApiURL } from "../config";
 import styles from '../login/page.module.css';
 import { useRouter } from "@/node_modules/next/navigation";
+import { parseCookies, destroyCookie } from "@/node_modules/nookies";
+
+
+
 
 export default function Cadastro() {
   const router = useRouter();
@@ -15,6 +17,7 @@ export default function Cadastro() {
     password: "",
     tipo: "cliente"
   });
+
   const [erroCadastro, setErroCadastro] = useState<string>("");
 
   const handleChange = (field: keyof Usuario, value: string) => {
@@ -53,6 +56,13 @@ export default function Cadastro() {
       setErroCadastro("Ocorreu um erro. Tente novamente mais tarde.");
     }
   };
+
+  useEffect(() => {
+    const {'restaurant-token': token} = parseCookies();
+    if (token){
+      router.push("/")
+    }
+  }, []);
 
   return (
     <div className={styles.center}>
