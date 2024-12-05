@@ -1,5 +1,6 @@
 "use client";
 import { useState, FormEvent, useEffect } from "react";
+import { parseCookies, destroyCookie } from "@/node_modules/nookies";
 
 import { ApiURL } from "../config";
 import styles from './page.module.css';
@@ -53,6 +54,18 @@ export default function Login() {
       console.error('Erro na requisicao', error)
     };
   }
+
+  
+
+  useEffect(() => {
+    const {'restaurant-token': token} = parseCookies();
+    if (token){
+      router.push("/")
+    }
+  }, []);
+
+  
+  
   return (
     <div className={styles.center}>
     <div  className={styles.loginContainer}>
