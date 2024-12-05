@@ -1,3 +1,4 @@
+"use client"
 import Link from "@/node_modules/next/link";
 import { useRouter } from "@/node_modules/next/navigation";
 import React, { useState, useEffect } from "react";
@@ -16,32 +17,40 @@ const Navbar = () => {
   const handleLogout = () => {
     destroyCookie(undefined, 'restaurant-token');
     setUser(false);
-    router.push("/login");
+    router.push("/");
   };
 
   const handleLogin = () => {
     router.push("/login");
   };
 
+
   return (
     <nav className={Styles.navbar}>
       <ul className={Styles.links}>
         <li><Link href="/" legacyBehavior><a>HOME</a></Link></li>
         <li><Link href="/menus" legacyBehavior><a>MENUS</a></Link></li>
-        <li><Link href="/reservas" legacyBehavior><a>RESERVAS</a></Link></li>
         <li><Link href="/contatos" legacyBehavior><a>CONTATOS</a></Link></li>
         {user ? (
-          <li>
-            <a className={Styles.links} onClick={handleLogout} style={{ cursor: "pointer" }}>
+          <div className={Styles.links}>
+<li><a>RESERVAS</a>
+        <ul className={Styles.submenu}>
+          <li><Link href="/Reservar" legacyBehavior><a>Reservar</a></Link></li>
+          <li><Link href="/MyReservas" legacyBehavior><a>Minhas Reservas</a></Link></li>
+        </ul></li>
+            <li><a className={Styles.links} onClick={handleLogout} style={{ cursor: "pointer" }}>
               LOGOUT
             </a>
-          </li>
+            </li>
+          </div>
         ) : (
+          <div className={Styles.links}>
+            <li><a href="/login">RESERVAS</a></li>
           <li>
             <a className={Styles.links} onClick={handleLogin} style={{ cursor: "pointer" }}>
               LOGIN
             </a>
-          </li>
+          </li></div>
         )}
       </ul>
 
