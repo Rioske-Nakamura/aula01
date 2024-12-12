@@ -411,3 +411,74 @@ footer .award {
   margin-bottom: 5px;
   font-weight: normal;
 }
+
+.mapa{
+  height: 150%;
+  padding-bottom: 10px;
+}
+.reservar {
+  align-items: center;
+  display: flex;
+  flex-direction: column;
+  font-family: "Century Gothic", sans-serif;
+}
+
+.mesas {
+  display: flex;
+  gap: 10px;
+}
+
+.mesas > button {
+  padding: 10px 20px;
+  background-color: #777575;
+  color: white;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+  font-size: 16px;
+  transition: all 0.3s;
+}
+
+.mesas > button:hover {
+  background-color: #8b0000;
+}
+
+.mesas > button:disabled {
+  background-color: #8b0000; /* Indica que a mesa está reservada */
+  cursor: not-allowed; /* Mostra que o botão está desativado */
+}
+
+.mesas > button.reservada {
+  background-color: #8b0000;
+}
+
+.formulario {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  margin-top: 20px;
+  padding: 10px;
+  border: #333 solid 1px;
+  border-radius: 5px;
+}
+
+.formularioInput {
+  margin: 10px;
+  padding: 5px;
+  font-size: 14px;
+}
+
+.formularioButton {
+  padding: 10px 20px;
+  background-color: #777575;
+  color: white;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+  font-size: 16px;
+}
+
+.formularioButton:hover {
+  background-color: #8b0000;
+}
+
