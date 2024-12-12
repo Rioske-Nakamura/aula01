@@ -83,6 +83,11 @@ const Reservar = () => {
           </div>
         )}
       </div>
+
+      <h1>Nossa localização</h1>
+
+      <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d12093.59389123217!2d-74.01064418261717!3d40.7312567!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x89c2599166ac45c1%3A0xd2bb7efe730dd284!2sRed%20Bamboo!5e0!3m2!1spt-BR!2sbr!4v1734009894773!5m2!1spt-BR!2sbr" width="600" height="450"  loading="lazy"></iframe>
+
     </div>
   );
 };
