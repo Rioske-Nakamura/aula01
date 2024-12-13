@@ -1,0 +1,41 @@
+{
+    "reservas": {
+        "mesas": [
+            {
+                "id": 1,
+                "codigo": "mesa1",
+                "n_lugares": 4
+            },
+            {
+                "id": 2,
+                "codigo": "mesa2",
+                "n_lugares": 4
+            },
+            {
+                "id": 3,
+                "codigo": "mesa3",
+                "n_lugares": 4
+            },
+            {
+                "id": 4,
+                "codigo": "mesa4",
+                "n_lugares": 4
+            },
+            {
+                "id": 5,
+                "codigo": "mesa5",
+                "n_lugares": 4
+            },
+            {
+                "id": 6,
+                "codigo": "mesa6",
+                "n_lugares": 4
+            },
+            {
+                "id": 7,
+                "codigo": "mesa7",
+                "n_lugares": 4
+            }
+
+        ]
+    }}
