@@ -34,7 +34,7 @@ export default function Cadastro() {
       setErroCadastro("Por favor, preencha todos os campos.");
       return;
     }
-
+    console.log("Dados enviados:", usuario); 
     try {
       const response = await fetch(`${ApiURL}/auth/register`, {
         method: "POST",

@@ -17,6 +17,7 @@ export default function Login() {
   const [email, setEmail] = useState<string>('');
   const [password, setPassword] = useState<string>('');
   const [error, setError] = useState<string>('');
+  const [showPassword, setShowPassword] = useState<boolean>(false);
   const router = useRouter();
 
   const Verifica = async (e: FormEvent) => {
@@ -64,7 +65,9 @@ export default function Login() {
     }
   }, []);
 
-  
+  const togglePasswordVisibility = () => {
+    setShowPassword(!showPassword); // Alterna o estado da visibilidade da senha
+  };
   
   return (
     <div className={styles.center}>
@@ -74,7 +77,12 @@ export default function Login() {
       <label>Digite seu endereço de e-mail</label>
         <input type="text" className={styles.input} value={email} onChange={(e)=> setEmail(e.target.value)} placeholder="email" />
         <label>Digite sua senha</label>
-        <input type="password" className={styles.input} value={password} onChange={(e) => setPassword(e.target.value)} placeholder="senha" />
+
+        <div className={styles.inputContainer}>
+
+        <input type={showPassword ? 'text' : 'password'} className={styles.input} value={password} onChange={(e) => setPassword(e.target.value)} placeholder="senha" />
+        <button type="button" className={styles.toggleButton} onClick={togglePasswordVisibility} > {showPassword ? 'Esconder' : 'Mostrar'} </button>
+        </div>
         <button className={styles.Button2} type="submit">Verifica</button>
       </form>
       <p id="error" style={{ color: "red" }} >{error}</p>
