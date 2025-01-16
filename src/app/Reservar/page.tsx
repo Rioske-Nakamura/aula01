@@ -39,41 +39,41 @@ const Reservar = () => {
         fetchGrid();
     }, []);
 
-    const reserveTable = async () => {
-      if (selectedTable) {
-          try {
-              const { "restaurant-token": token } = parseCookies(); // Recuperar o token
-              const decodedToken = JSON.parse(atob(token.split('.')[1])); // Decodificar o token (JWT)
-              const userId = decodedToken.id;
-  
-              const response = await fetch(`${ApiURL}/table/reserve`, {
-                  method: "POST",
-                  headers: { "Content-Type": "application/json" },
-                  body: JSON.stringify({ tableId: selectedTable, nickname, contact, userId }),
-              });
-  
-              const data = await response.json();
-              if (response.ok) {
-                  alert("Reserva feita com sucesso!");
-                  setGrid((prev) =>
-                      prev.map((row) =>
-                          row.map((table) =>
-                              table?.id === selectedTable ? { ...table, reserved: true } : table
-                          )
-                      )
-                  );
-                  setSelectedTable(null);
-                  setNickname("");
-                  setContact("");
-              } else {
-                  alert(data.msg);
-              }
-          } catch (error) {
-              console.error("Erro ao reservar mesa:", error);
-          }
-      }
-  };
-  
+const reserveTable = async () => {
+    if (selectedTable) {
+        try {
+            const { "restaurant-token": token } = parseCookies(); // Recuperar o token
+            const decodedToken = JSON.parse(atob(token.split('.')[1])); // Decodificar o token (JWT)
+            const userId = decodedToken.id;
+
+            const response = await fetch(`${ApiURL}/table/reserve`, {
+                method: "POST",
+                headers: { "Content-Type": "application/json" },
+                body: JSON.stringify({ tableId: selectedTable, nickname, contact, userId }),
+            });
+
+            const data = await response.json();
+            if (response.ok) {
+                alert("Reserva feita com sucesso!");
+                setGrid((prev) =>
+                    prev.map((row) =>
+                        row.map((table) =>
+                            table?.id === selectedTable ? { ...table, reserved: true } : table
+                        )
+                    )
+                );
+                setSelectedTable(null);
+                setNickname("");
+                setContact("");
+            } else {
+                alert(data.msg);
+            }
+        } catch (error) {
+            console.error("Erro ao reservar mesa:", error);
+        }
+    }
+};
+
     return (
         <div className={Styles.reservar}>
           <Navbar />

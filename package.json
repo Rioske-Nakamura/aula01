@@ -10,12 +10,14 @@
   },
   "dependencies": {
     "cookies": "^0.9.1",
+    "jwt-decode": "^4.0.0",
     "next": "^14.2.23",
     "nookies": "^2.5.2",
     "react": "^18.3.1",
     "react-dom": "^18.3.1"
   },
   "devDependencies": {
+    "@types/jwt-decode": "^2.2.1",
     "@types/node": "^20",
     "@types/react": "^18.3.18",
     "@types/react-dom": "^18.3.5",
