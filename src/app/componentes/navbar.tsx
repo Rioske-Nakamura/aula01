@@ -53,12 +53,12 @@ const Navbar = () => {
             )}
             <li>
               <Link href="/Reservar" legacyBehavior>
-                <a>Reservar</a>
+                <a>RESERVAR</a>
               </Link>
             </li>
             <li>
               <Link href="/MyReservas" legacyBehavior>
-                <a>Minhas Reservas</a>
+                <a>MINHAS RESERVAS</a>
               </Link>
             </li>
             <li>
