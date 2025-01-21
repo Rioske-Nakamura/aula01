@@ -3,7 +3,7 @@
 import { useEffect, useState } from "react";
 import { parseCookies } from "nookies";
 import { useRouter } from "next/navigation";
-import Styles from "./page.module.css";
+import Styles from "../page.module.css";
 import { ApiURL } from "../config";
 import Navbar from "../componentes/navbar";
 
@@ -77,22 +77,16 @@ const reserveTable = async () => {
     return (
         <div className={Styles.reservar}>
           <Navbar />
-            <h1>Mapa de Mesas (10x10)</h1>
-            <div className={Styles.grid}>
+            <h1>Mapa de Reserva</h1>
+            <img src="../imgs/mapa.png" className={Styles.mapa}/>
+            <div className={Styles.reservar2}>
                 {grid.map((row, rowIndex) => (
-                    <div key={rowIndex} className={Styles.row}>
+                    <div key={rowIndex} className={Styles.mesas}>
                         {row.map((table, colIndex) =>
                             table ? (
                                 <button
                                     key={colIndex}
                                     onClick={() => !table.reserved && setSelectedTable(table.id)}
-                                    className={
-                                        table.reserved
-                                            ? Styles.reserved
-                                            : table.id === selectedTable
-                                            ? Styles.selected
-                                            : Styles.available
-                                    }
                                     disabled={table.reserved}
                                 >
                                     { table.name}
@@ -106,7 +100,7 @@ const reserveTable = async () => {
             </div>
 
             {selectedTable && (
-                <div className={Styles.form}>
+                <div className={Styles.formulario}>
                     <h2>Reservar Mesa</h2>
                     <input
                         type="text"
