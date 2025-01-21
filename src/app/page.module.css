@@ -421,11 +421,18 @@ footer .award {
   display: flex;
   flex-direction: column;
   font-family: "Century Gothic", sans-serif;
+  
+} 
+.reservar2 {
+  align-items: center;
+  display: flex;
+  flex-direction: row;
+  flex-wrap: wrap;
 }
-
 .mesas {
   display: flex;
-  gap: 10px;
+  margin-top: 10px;
+  margin-right: 10px;
 }
 
 .mesas > button {
@@ -462,13 +469,13 @@ footer .award {
   border-radius: 5px;
 }
 
-.formularioInput {
+.formulario > input {
   margin: 10px;
   padding: 5px;
   font-size: 14px;
 }
 
-.formularioButton {
+.formulario > button {
   padding: 10px 20px;
   background-color: #777575;
   color: white;
@@ -478,37 +485,31 @@ footer .award {
   font-size: 16px;
 }
 
-.formularioButton:hover {
+.formulario > button:hover {
   background-color: #8b0000;
 }
 
-.grid {
-  display: grid;
-  grid-template-columns: repeat(10, 1fr);
-  gap: 5px;
-}
-
-.row {
+.reservas {
   display: flex;
+  flex-direction: column;
+  align-items: center;
+  margin-top: 20px;
+  padding: 10px;
+  border: #333 solid 1px;
+  border-radius: 5px;
+  list-style: none
 }
 
-.available {
-  background-color: green;
+.button {
+  padding: 10px 20px;
+  background-color: #777575;
   color: white;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+  font-size: 16px;
 }
 
-.reserved {
-  background-color: red;
-  color: white;
-  cursor: not-allowed;
-}
-
-.empty {
-  background-color: transparent;
-  border: 1px dashed gray;
-}
-
-.selected {
-  background-color: blue;
-  color: white;
+.button:hover {
+  background-color: #8b0000;
 }
