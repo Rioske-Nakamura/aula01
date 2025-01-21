@@ -53,12 +53,15 @@ const Navbar = () => {
             )}
             <li>
               <Link href="/Reservar" legacyBehavior>
-                <a>RESERVAR</a>
-              </Link>
-            </li>
-            <li>
+                <a>RESERVAR 
+                  <ul className={Styles.submenu} >
+                    <li>
               <Link href="/MyReservas" legacyBehavior>
                 <a>MINHAS RESERVAS</a>
+              </Link>
+            </li>
+                  </ul>
+                </a>
               </Link>
             </li>
             <li>
