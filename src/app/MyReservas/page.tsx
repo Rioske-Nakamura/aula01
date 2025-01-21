@@ -84,9 +84,9 @@ const MyReservas = () => {
       <h2>Minhas Reservas</h2>
 
       {reservas.length > 0 ? (
-        <ul className={Styles.reservasList}>
+        <ul className={Styles.reservas}>
           {reservas.map((reserva) => (
-            <li key={reserva.id} className={Styles.reservaItem}>
+            <li key={reserva.id}>
               <p>
                 <strong>Mesa:</strong> {reserva.name}
               </p>
@@ -97,8 +97,7 @@ const MyReservas = () => {
                 <strong>Contato:</strong> {reserva.contact}
               </p>
               <button
-                onClick={() => cancelReservation(reserva.id)}
-                className={Styles.cancelButton}
+                onClick={() => cancelReservation(reserva.id)} className={Styles.button}
               >
                 Cancelar Reserva
               </button>
