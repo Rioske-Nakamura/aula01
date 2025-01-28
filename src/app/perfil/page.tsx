@@ -3,6 +3,7 @@ import React, { useState, useEffect } from "react";
 import { useRouter } from "@/node_modules/next/navigation";
 import { parseCookies } from "@/node_modules/nookies";
 import Styles from "../page.module.css";
+import Navbar from "../componentes/navbar";
 
 const EditProfile = () => {
   const router = useRouter();
@@ -30,6 +31,7 @@ const EditProfile = () => {
 
   return (
     <div className={Styles.formulario}>
+        <Navbar/>
       <h1>Editar Perfil</h1>
       <form onSubmit={handleSubmit}>
         <label>

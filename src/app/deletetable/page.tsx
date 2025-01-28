@@ -2,6 +2,8 @@
 import { useState, useEffect } from "react";
 import { parseCookies } from "nookies";
 import { ApiURL } from "../config";
+import Navbar from "../componentes/navbar";
+import Styles from "../page.module.css";
 
 export default function DeleteTable() {
   const [tables, setTables] = useState<any[]>([]); // Lista de mesas
@@ -53,14 +55,15 @@ export default function DeleteTable() {
   }, []);
 
   return (
-    <div>
+    <div className={Styles.reservar}>
+        <Navbar/>
       <h1>Excluir Mesa</h1>
       {message && <p>{message}</p>}
       <ul>
         {tables.map((table) => (
-          <li key={table.id}>
+          <li className={Styles.reservas} key={table.id}>
             <p>Mesa ID: {table.id} - Nome: {table.name}</p>
-            <button onClick={() => handleDeleteTable(table.id)}>
+            <button className={Styles.button} onClick={() => handleDeleteTable(table.id)}>
               Excluir
             </button>
           </li>

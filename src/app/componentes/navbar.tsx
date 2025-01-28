@@ -49,10 +49,17 @@ const Navbar = () => {
           <div className={Styles.links}>
             {user.tipo === "ADM" && (
               <>
+              <li>
+              <a>
+              ADIMINISTRAÇÃO
+              <ul className={Styles.submenu}>
                 <li><Link href="/addTable" legacyBehavior><a>Adicionar Mesa</a></Link></li>
                 <li><Link href="/deletetable" legacyBehavior><a>Excluir Mesa</a></Link></li>
                 <li><Link href="/excluiruser" legacyBehavior><a>Excluir Usuário</a></Link></li>
                 <li><Link href="/cancelar" legacyBehavior><a>Cancelar</a></Link></li>
+                </ul>
+                </a>
+                </li>
               </>
             )}
             <li>

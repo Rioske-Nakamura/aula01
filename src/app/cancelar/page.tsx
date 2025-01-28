@@ -2,6 +2,8 @@
 import { useState, useEffect } from "react";
 import { parseCookies } from "nookies";
 import { ApiURL } from "../config";
+import Navbar from "../componentes/navbar";
+import Styles from "../page.module.css";
 
 export default function CancelReservation() {
   const [tables, setTables] = useState<any[]>([]); // Lista de mesas
@@ -53,15 +55,16 @@ export default function CancelReservation() {
   }, []);
 
   return (
-    <div>
+    <div className={Styles.reservar}>
+        <Navbar/>
       <h1>Cancelar Reserva</h1>
       {message && <p>{message}</p>}
       <ul>
         {tables.map((table) => (
-          <li key={table.id}>
+          <li className={Styles.reservas} key={table.id}>
             <p>Mesa: {table.name}</p>
             {table.userId ? (
-              <button onClick={() => handleCancelReservation(table.id)}>
+              <button onClick={() => handleCancelReservation(table.id)} className={Styles.button}>
                 Cancelar Reserva
               </button>
             ) : (

@@ -3,6 +3,8 @@ import { useState, FormEvent } from "react";
 import { useRouter } from "next/navigation";
 import { parseCookies } from "nookies";
 import { ApiURL } from "../config";
+import Navbar from "../componentes/navbar";
+import Styles from "../page.module.css";
 
 export default function DeleteUser() {
   const [userId, setUserId] = useState<string>("");
@@ -30,18 +32,22 @@ export default function DeleteUser() {
   };
 
   return (
-    <div>
+    <div className={Styles.reservar}>
+        <Navbar/>
       <h1>Excluir Usuário</h1>
+      <div className={Styles.formulario}>
       <form onSubmit={handleSubmit}>
         <input
           type="text"
+          className={Styles.input}
           placeholder="ID do Usuário"
           value={userId}
           onChange={(e) => setUserId(e.target.value)}
         />
-        <button type="submit">Excluir</button>
+        <button type="submit" className={Styles.button}>Excluir</button>
       </form>
       {message && <p>{message}</p>}
+    </div>
     </div>
   );
 }

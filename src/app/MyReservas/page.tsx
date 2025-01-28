@@ -84,9 +84,9 @@ const MyReservas = () => {
       <h2>Minhas Reservas</h2>
 
       {reservas.length > 0 ? (
-        <ul className={Styles.reservas}>
+        <ul>
           {reservas.map((reserva) => (
-            <li key={reserva.id}>
+            <li className={Styles.reservas} key={reserva.id}>
               <p>
                 <strong>Mesa:</strong> {reserva.name}
               </p>

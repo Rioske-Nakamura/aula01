@@ -2,6 +2,8 @@
 import { useState, FormEvent } from "react";
 import { parseCookies } from "nookies";
 import { ApiURL } from "../config";
+import Navbar from "../componentes/navbar";
+import Styles from "../page.module.css";
 
 export default function AddTable() {
   const [name, setName] = useState<string>("");
@@ -31,30 +33,36 @@ export default function AddTable() {
   };
 
   return (
-    <div>
+    <div className={Styles.reservar}>
+        <Navbar/>
       <h1>Adicionar Mesa</h1>
+      <div className={Styles.formulario}>
       <form onSubmit={handleSubmit}>
         <input
           type="text"
+          className={Styles.input}
           placeholder="Nome da Mesa"
           value={name}
           onChange={(e) => setName(e.target.value)}
         />
         <input
           type="number"
+          className={Styles.input}
           placeholder="Colunas"
           value={columns}
           onChange={(e) => setColumns(Number(e.target.value))}
         />
         <input
           type="number"
+          className={Styles.input}
           placeholder="Linhas"
           value={rows}
           onChange={(e) => setRows(Number(e.target.value))}
         />
-        <button type="submit">Adicionar</button>
+        <button type="submit" className={Styles.button}>Adicionar</button>
       </form>
       {message && <p>{message}</p>}
+    </div>
     </div>
   );
 }
