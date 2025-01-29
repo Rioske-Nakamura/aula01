@@ -3,11 +3,32 @@ import { useState, useEffect } from "react";
 import { parseCookies } from "nookies";
 import { ApiURL } from "../config";
 import Navbar from "../componentes/navbar";
+import { useRouter } from "@/node_modules/next/navigation";
 import Styles from "../page.module.css";
 
 export default function CancelReservation() {
   const [tables, setTables] = useState<any[]>([]); // Lista de mesas
   const [message, setMessage] = useState<string>("");
+  const { "restaurant-token": token } = parseCookies();
+  
+  const router = useRouter();
+
+  useEffect(() => {
+    if (!token) {
+      router.push("/");
+      return;
+    }
+
+    try {
+      const decodedToken = JSON.parse(atob(token.split(".")[1])); 
+      if (decodedToken.tipo !== "ADM") {
+        router.push("/");
+      }
+    } catch (error) {
+      console.error("Erro ao decodificar token:", error);
+      router.push("/");
+    }
+  }, [token]);
 
   const fetchTables = async () => {
     const { token } = parseCookies();

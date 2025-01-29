@@ -77,6 +77,11 @@ const Navbar = () => {
               </Link>
             </li>
             <li>
+              <Link href="/perfil" legacyBehavior>
+              <a>EDITAR PERFIL</a>
+              </Link>
+            </li>
+            <li>
               <a onClick={handleLogout} style={{ cursor: "pointer" }}>
                 LOGOUT
               </a>

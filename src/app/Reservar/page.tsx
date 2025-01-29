@@ -76,7 +76,7 @@ const reserveTable = async () => {
 
     return (
         <div className={Styles.reservar}>
-          <Navbar />
+        <Navbar/>
             <h1>Mapa de Reserva</h1>
             <img src="../imgs/mapa.png" className={Styles.mapa}/>
             <div className={Styles.reservar2}>
