@@ -74,6 +74,7 @@ const EditProfile = () => {
             Nome:
             <input
               type="text"
+              className={Styles.input}
               value={user.nome}
               onChange={(e) => setUser({ ...user, nome: e.target.value })}
             />
@@ -82,6 +83,7 @@ const EditProfile = () => {
             Email:
             <input
               type="email"
+              className={Styles.input}
               value={user.email}
               onChange={(e) => setUser({ ...user, email: e.target.value })}
             />
@@ -90,6 +92,7 @@ const EditProfile = () => {
             Nova Senha:
             <input
               type="password"
+              className={Styles.input}
               value={user.password}
               onChange={(e) => setUser({ ...user, password: e.target.value })}
             />
