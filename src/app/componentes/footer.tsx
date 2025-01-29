@@ -1,6 +1,5 @@
+/**footer */
 import Styles from "../page.module.css"
-import Navbar from "./navbar"
-
 const Footer = () => {
 
     return(

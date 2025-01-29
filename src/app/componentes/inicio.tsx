@@ -1,3 +1,4 @@
+/**interface inicial do home */
 import Styles from "../page.module.css"
 
 

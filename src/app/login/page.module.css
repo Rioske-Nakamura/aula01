@@ -1,87 +1,106 @@
-.input{
-  width: 90%;
-  padding: 10px;
-  margin-bottom: 15px;
-  border: 1px solid #ddd;
-  border-radius: 4px;
+/* Estilo para os campos de entrada */
+.input {
+  width: 90%; /* Define a largura do campo de entrada como 90% do contêiner */
+  padding: 10px; /* Adiciona espaçamento interno para conforto */
+  margin-bottom: 15px; /* Adiciona espaço entre os campos */
+  border: 1px solid #ddd; /* Borda cinza clara para o campo */
+  border-radius: 4px; /* Bordas arredondadas */
 }
 
+/* Estilo para o contêiner de login */
 .loginContainer {
-  text-align: center;
-  padding: 20px;
-  background-color: #fff;
-  border: 1px solid #ddd;
-  border-radius: 8px;
-  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
-  padding-right: 20px;
+  text-align: center; /* Alinha o texto no centro */
+  padding: 20px; /* Espaçamento interno */
+  background-color: #fff; /* Cor de fundo branca */
+  border: 1px solid #ddd; /* Borda cinza clara */
+  border-radius: 8px; /* Bordas mais arredondadas */
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1); /* Sombra leve para dar profundidade */
+  padding-right: 20px; /* Adiciona espaço extra à direita */
 }
 
+/* Estilo para a logo */
 .logo {
-  width: 80px;
-  margin-bottom: 20px;
+  width: 80px; /* Define o tamanho da logo */
+  margin-bottom: 20px; /* Espaço abaixo da logo */
 }
 
+/* Estilo para os rótulos de formulário */
 .form label {
-  display: block;
-  text-align: left;
-  font-size: 14px;
-  margin-bottom: 5px;
-  color: #555;
+  display: block; /* Exibe os rótulos como blocos */
+  text-align: left; /* Alinha os rótulos à esquerda */
+  font-size: 14px; /* Define o tamanho da fonte */
+  margin-bottom: 5px; /* Espaço abaixo do rótulo */
+  color: #555; /* Cor cinza escuro para os rótulos */
 }
 
+/* Estilo para os campos de entrada de texto e senha */
 .form input[type="text"],
 .form input[type="password"] {
-  width: 90%;
-  padding: 10px;
-  margin-bottom: 15px;
-  border: 1px solid #ddd;
-  border-radius: 4px;
-
+  width: 90%; /* Largura de 90% */
+  padding: 10px; /* Preenchimento interno */
+  margin-bottom: 15px; /* Espaço entre os campos */
+  border: 1px solid #ddd; /* Borda cinza clara */
+  border-radius: 4px; /* Bordas arredondadas */
 }
 
+/* Estilo para os links */
 .link {
-  display: block;
-  font-size: 12px;
-  color: #2271b1;
-  text-decoration: none;
-  margin-top: 10px;
+  display: block; /* Exibe os links como blocos */
+  font-size: 12px; /* Tamanho de fonte pequeno */
+  color: #2271b1; /* Cor azul para os links */
+  text-decoration: none; /* Remove o sublinhado */
+  margin-top: 10px; /* Espaço superior */
 }
 
+/* Margem adicional para links */
 .link {
-  margin-top: 5px;
+  margin-top: 5px; /* Ajuste de margem */
 }
 
+/* Estilo para o botão de login */
 .Button2 {
-  display: inline-block;
-  padding: 10px 20px;
-  background-color: #8b0000;
-  color: #fff;
-  text-decoration: none;
-  font-size: 14px;
-  transition: background 0.3s;
+  display: inline-block; /* Exibe o botão como bloco inline */
+  padding: 10px 20px; /* Adiciona preenchimento ao redor do botão */
+  background-color: #8b0000; /* Cor de fundo vermelha */
+  color: #fff; /* Cor do texto branco */
+  text-decoration: none; /* Remove o sublinhado */
+  font-size: 14px; /* Tamanho da fonte */
+  transition: background 0.3s; /* Transição suave para a cor de fundo */
 }
 
+/* Estilo de hover para o botão */
 .Button2:hover {
-  background-color: #a52a2a;
+  background-color: #a52a2a; /* Cor de fundo mais clara quando o botão é clicado */
 }
 
-.center{
-  display: flex;
-  justify-content: center;
-  align-items: center;
+/* Estilo para centralizar o conteúdo na página */
+.center {
+  display: flex; /* Usa flexbox para alinhamento */
+  justify-content: center; /* Alinha horizontalmente no centro */
+  align-items: center; /* Alinha verticalmente no centro */
 }
 
+/* Estilo para o botão de alternância de senha */
 .toggleButton {
-  margin-left: 8px;
-  padding: 8px;
-  font-size: 14px;
-  cursor: pointer;
-  background-color: transparent;
-  border: 1px solid #ccc;
-  border-radius: 4px;
+  margin-left: 8px; /* Espaço à esquerda do botão */
+  padding: 8px; /* Preenchimento interno */
+  font-size: 14px; /* Tamanho da fonte */
+  cursor: pointer; /* Altera o cursor para ponteiro */
+  background-color: transparent; /* Fundo transparente */
+  border: 1px solid #ccc; /* Borda cinza clara */
+  border-radius: 4px; /* Bordas arredondadas */
 }
 
+/* Estilo para o contêiner de input com o botão de alternância */
 .inputContainer {
-  display: flex;
-  align-items: center;
+  display: flex; /* Exibe os elementos lado a lado */
+  align-items: center; /* Alinha os itens no centro */
+}
+
+/* Estilo responsivo: Ajustes em telas menores */
+@media (max-width: 768px) {
+  .loginContainer {
+    width: 100%; /* A largura da caixa de login ocupa 100% em telas menores */
+    padding: 15px; /* Ajusta o padding */
+  }
 }

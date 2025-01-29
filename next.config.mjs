@@ -1,4 +1,6 @@
 /** @type {import('next').NextConfig} */
-const nextConfig = {};
+// Este comentário fornece uma dica de tipo para o editor, ajudando na autocompletação e validação de código
 
-export default nextConfig;
+const nextConfig = {}; // Definindo a configuração do Next.js, mas atualmente está vazio
+
+export default nextConfig; // Exporta a configuração do Next.js para ser usada no projeto
