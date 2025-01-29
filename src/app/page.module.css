@@ -446,6 +446,16 @@ footer .award {
   flex-direction: row;
   flex-wrap: wrap;
 }
+.reservar > ul{
+  flex-direction: row-reverse;
+    display: flex;
+    justify-content: center;
+    gap: 10px;
+    flex-direction: row;
+    max-width: 1200px;
+    flex-wrap: wrap;
+    overflow: hidden;
+  }
 .mesas {
   display: flex;
   margin-top: 10px;
@@ -514,7 +524,7 @@ footer .award {
   padding: 10px;
   border: #333 solid 1px;
   border-radius: 5px;
-  list-style: none
+  list-style: none;
 }
 
 .button {
